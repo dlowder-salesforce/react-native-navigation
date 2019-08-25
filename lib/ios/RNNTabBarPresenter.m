@@ -19,7 +19,9 @@
     [tabBarController rnn_setTabBarBackgroundColor:[withDefault.bottomTabs.backgroundColor getWithDefaultValue:nil]];
     [tabBarController rnn_setTabBarTranslucent:[withDefault.bottomTabs.translucent getWithDefaultValue:NO]];
     [tabBarController rnn_setTabBarHideShadow:[withDefault.bottomTabs.hideShadow getWithDefaultValue:NO]];
+#if !TARGET_OS_TV
     [tabBarController rnn_setTabBarStyle:[RCTConvert UIBarStyle:[withDefault.bottomTabs.barStyle getWithDefaultValue:@"default"]]];
+#endif
     [tabBarController rnn_setTabBarVisible:[withDefault.bottomTabs.visible getWithDefaultValue:YES] animated:[withDefault.bottomTabs.animate getWithDefaultValue:NO]];
 }
 
@@ -46,9 +48,11 @@
         [tabBarController rnn_setTabBarBackgroundColor:newOptions.bottomTabs.backgroundColor.get];
     }
 
+#if !TARGET_OS_TV
     if (newOptions.bottomTabs.barStyle.hasValue) {
         [tabBarController rnn_setTabBarStyle:[RCTConvert UIBarStyle:newOptions.bottomTabs.barStyle.get]];
     }
+#endif
 
     if (newOptions.bottomTabs.translucent.hasValue) {
         [tabBarController rnn_setTabBarTranslucent:newOptions.bottomTabs.translucent.get];

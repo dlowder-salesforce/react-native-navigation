@@ -6,7 +6,9 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 @implementation UINavigationController (RNNOptions)
 
 - (void)rnn_setInteractivePopGestureEnabled:(BOOL)enabled {
+#if !TARGET_OS_TV
 	self.interactivePopGestureRecognizer.enabled = enabled;
+#endif
 }
 
 - (void)rnn_setRootBackgroundImage:(UIImage *)backgroundImage {
@@ -30,7 +32,9 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 }
 
 - (void)rnn_hideBarsOnScroll:(BOOL)hideOnScroll {
+#if !TARGET_OS_TV
 	self.hidesBarsOnSwipe = hideOnScroll;
+#endif
 }
 
 - (void)rnn_setNavigationBarNoBorder:(BOOL)noBorder {
@@ -41,9 +45,11 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 	}
 }
 
+#if !TARGET_OS_TV
 - (void)rnn_setBarStyle:(UIBarStyle)barStyle {
 	self.navigationBar.barStyle = barStyle;
 }
+#endif
 
 - (void)rnn_setNavigationBarFontFamily:(NSString *)fontFamily fontSize:(NSNumber *)fontSize color:(UIColor *)color {
 	NSDictionary* fontAttributes = [RNNFontAttributesCreator createFontAttributesWithFontFamily:fontFamily fontSize:fontSize color:color];
@@ -54,6 +60,7 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 }
 
 - (void)rnn_setNavigationBarLargeTitleVisible:(BOOL)visible {
+#if !TARGET_OS_TV
 	if (@available(iOS 11.0, *)) {
 		if (visible){
 			self.navigationBar.prefersLargeTitles = YES;
@@ -61,13 +68,16 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 			self.navigationBar.prefersLargeTitles = NO;
 		}
 	}
+#endif
 }
 
 - (void)rnn_setNavigationBarLargeTitleFontFamily:(NSString *)fontFamily fontSize:(NSNumber *)fontSize color:(UIColor *)color {
+#if !TARGET_OS_TV
 	if (@available(iOS 11.0, *)) {
 		NSDictionary* fontAttributes = [RNNFontAttributesCreator createFontAttributesWithFontFamily:fontFamily fontSize:fontSize color:color];
 		self.navigationBar.largeTitleTextAttributes = fontAttributes;
-	}
+    }
+#endif
 }
 
 - (void)rnn_setNavigationBarTranslucent:(BOOL)translucent {
@@ -79,7 +89,11 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 		[self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 		self.navigationBar.shadowImage = [UIImage new];
 		UIVisualEffectView *blur = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+#if TARGET_OS_TV
+        CGRect statusBarFrame = CGRectMake(0, 0, 0, 0);
+#else
 		CGRect statusBarFrame = [[UIApplication sharedApplication] statusBarFrame];
+#endif
 		blur.frame = CGRectMake(0, -1 * statusBarFrame.size.height, self.navigationBar.frame.size.width, self.navigationBar.frame.size.height + statusBarFrame.size.height);
 		blur.userInteractionEnabled = NO;
 		blur.tag = BLUR_TOPBAR_TAG;

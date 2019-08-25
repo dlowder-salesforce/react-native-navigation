@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors      = "Wix.com"
   s.homepage     = package['homepage']
   s.license      = package['license']
-  s.platform     = :ios, "9.0"
+  s.platforms    = { :ios => "9.0", :tvos => "9.2" }
 
   s.module_name  = 'ReactNativeNavigation'
 

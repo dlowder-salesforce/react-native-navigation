@@ -25,19 +25,23 @@
 	RNNNavigationController* navigationController = self.boundViewController;
 	RNNNavigationOptions * withDefault = [options withDefault:[self defaultOptions]];
 	
+#if !TARGET_OS_TV
 	self.interactivePopGestureDelegate = [InteractivePopGestureDelegate new];
 	self.interactivePopGestureDelegate.navigationController = navigationController;
 	self.interactivePopGestureDelegate.originalDelegate = navigationController.interactivePopGestureRecognizer.delegate;
 	navigationController.interactivePopGestureRecognizer.delegate = self.interactivePopGestureDelegate;
-	
+
 	[navigationController rnn_setInteractivePopGestureEnabled:[withDefault.popGesture getWithDefaultValue:YES]];
-	[navigationController rnn_setRootBackgroundImage:[withDefault.rootBackgroundImage getWithDefaultValue:nil]];
+#endif
+    [navigationController rnn_setRootBackgroundImage:[withDefault.rootBackgroundImage getWithDefaultValue:nil]];
 	[navigationController rnn_setNavigationBarTestID:[withDefault.topBar.testID getWithDefaultValue:nil]];
 	[navigationController rnn_setNavigationBarVisible:[withDefault.topBar.visible getWithDefaultValue:YES] animated:[withDefault.topBar.animate getWithDefaultValue:YES]];
 	[navigationController rnn_hideBarsOnScroll:[withDefault.topBar.hideOnScroll getWithDefaultValue:NO]];
 	[navigationController rnn_setNavigationBarNoBorder:[withDefault.topBar.noBorder getWithDefaultValue:NO]];
+#if !TARGET_OS_TV
 	[navigationController rnn_setBarStyle:[RCTConvert UIBarStyle:[withDefault.topBar.barStyle getWithDefaultValue:@"default"]]];
-	[navigationController rnn_setNavigationBarTranslucent:[withDefault.topBar.background.translucent getWithDefaultValue:NO]];
+#endif
+    [navigationController rnn_setNavigationBarTranslucent:[withDefault.topBar.background.translucent getWithDefaultValue:NO]];
 	[navigationController rnn_setNavigationBarClipsToBounds:[withDefault.topBar.background.clipToBounds getWithDefaultValue:NO]];
 	[navigationController rnn_setNavigationBarBlur:[withDefault.topBar.background.blur getWithDefaultValue:NO]];
 	[navigationController setTopBarBackgroundColor:[withDefault.topBar.background.color getWithDefaultValue:nil]];
@@ -91,10 +95,12 @@
 		[navigationController rnn_setNavigationBarNoBorder:[newOptions.topBar.noBorder get]];
 	}
 	
+#if !TARGET_OS_TV
 	if (newOptions.topBar.barStyle.hasValue) {
 		[navigationController rnn_setBarStyle:[RCTConvert UIBarStyle:newOptions.topBar.barStyle.get]];
 	}
-	
+#endif
+
 	if (newOptions.topBar.background.translucent.hasValue) {
 		[navigationController rnn_setNavigationBarTranslucent:[newOptions.topBar.background.translucent get]];
 	}
