@@ -31,9 +31,11 @@ const NSInteger TOP_BAR_TRANSPARENT_TAG = 78264803;
 	return self;
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return [_presenter getStatusBarStyle:self.resolveOptions];
 }
+#endif
 
 - (UIModalPresentationStyle)modalPresentationStyle {
 	return self.getCurrentChild.modalPresentationStyle;

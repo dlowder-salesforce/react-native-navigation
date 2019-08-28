@@ -32,7 +32,9 @@ typedef void (^RNNReactViewReadyCompletionBlock)(void);
 
 - (void)viewDidLayoutSubviews;
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)getStatusBarStyle:(RNNNavigationOptions *)resolvedOptions;
+#endif
 
 - (BOOL)isStatusBarVisibility:(UINavigationController *)stack resolvedOptions:(RNNNavigationOptions *)resolvedOptions;
 @end

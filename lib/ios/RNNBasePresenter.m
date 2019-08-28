@@ -165,6 +165,7 @@
     [[self dotIndicatorPresenter] apply:child:[child resolveOptions].bottomTab.dotIndicator];
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)getStatusBarStyle:(RNNNavigationOptions *)resolvedOptions {
     RNNNavigationOptions *withDefault = [resolvedOptions withDefault:[self defaultOptions]];
     if ([[withDefault.statusBar.style getWithDefaultValue:@"default"] isEqualToString:@"light"]) {
@@ -173,6 +174,7 @@
         return UIStatusBarStyleDefault;
     }
 }
+#endif
 
 - (BOOL)isStatusBarVisibility:(UINavigationController *)stack resolvedOptions:(RNNNavigationOptions *)resolvedOptions {
     RNNNavigationOptions *withDefault = [resolvedOptions withDefault:[self defaultOptions]];

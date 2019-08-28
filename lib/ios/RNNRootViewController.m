@@ -119,11 +119,11 @@
 	return [_presenter isStatusBarVisibility:self.navigationController resolvedOptions:self.resolveOptions];
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return [_presenter getStatusBarStyle:[self resolveOptions]];
 }
 
-#if !TARGET_OS_TV
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
 	return self.resolveOptions.layout.supportedOrientations;
 }

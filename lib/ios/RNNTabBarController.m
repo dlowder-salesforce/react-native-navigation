@@ -43,9 +43,11 @@
 	[super setSelectedIndex:selectedIndex];
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return [[self presenter] getStatusBarStyle:self.resolveOptions];
 }
+#endif
 
 #pragma mark UITabBarControllerDelegate
 

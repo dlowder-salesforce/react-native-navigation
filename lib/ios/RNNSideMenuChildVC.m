@@ -39,6 +39,7 @@
 	return self.child;
 }
 
+#if !TARGET_OS_TV
 - (UIStatusBarStyle)preferredStatusBarStyle {
 	return [[self presenter] getStatusBarStyle:[self resolveOptions]];
 }
@@ -46,5 +47,6 @@
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
 	return self.child.supportedInterfaceOrientations;
 }
+#endif
 
 @end
