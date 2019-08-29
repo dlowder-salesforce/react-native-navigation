@@ -28,8 +28,10 @@
     [[self.boundViewController expect] rnn_setTabBarBackgroundColor:nil];
     [[self.boundViewController expect] rnn_setTabBarTranslucent:NO];
     [[self.boundViewController expect] rnn_setTabBarHideShadow:NO];
+#if !TARGET_OS_TV
     [[self.boundViewController expect] rnn_setTabBarStyle:UIBarStyleDefault];
-    [[self.boundViewController expect] rnn_setTabBarVisible:YES animated:NO];
+#endif
+	[[self.boundViewController expect] rnn_setTabBarVisible:YES animated:NO];
     [self.uut applyOptions:emptyOptions];
     [self.boundViewController verify];
 }
@@ -47,8 +49,10 @@
     [[self.boundViewController expect] rnn_setTabBarBackgroundColor:[UIColor redColor]];
     [[self.boundViewController expect] rnn_setTabBarTranslucent:NO];
     [[self.boundViewController expect] rnn_setTabBarHideShadow:YES];
-    [[self.boundViewController expect] rnn_setTabBarStyle:UIBarStyleBlack];
-    [[self.boundViewController expect] rnn_setTabBarVisible:NO animated:NO];
+#if !TARGET_OS_TV
+	[[self.boundViewController expect] rnn_setTabBarStyle:UIBarStyleBlack];
+#endif
+	[[self.boundViewController expect] rnn_setTabBarVisible:NO animated:NO];
 
     [self.uut applyOptions:initialOptions];
     [self.boundViewController verify];

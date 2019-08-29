@@ -69,7 +69,7 @@
     "jest": "24.0.0-alpha.6",
     "metro-react-native-babel-preset": "0.52.x",
     "react": "16.8.6",
-    "react-native": "0.60.0",
+    "react-native": "npm:react-native-tvos@0.60.4-3",
     "react-native-typescript-transformer": "1.2.12",
     "react-native-view-overflow": "0.0.4",
     "react-native-keyboard-tracking-view": "5.x.x",

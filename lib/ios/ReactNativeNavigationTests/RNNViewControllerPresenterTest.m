@@ -29,17 +29,20 @@
 	XCTAssertTrue((self.bindedViewController.view.subviews.count) == 0);
 }
 
+#if !TARGET_OS_TV
 - (void)testApplyOptions_topBarPrefersLargeTitleDefaultFalse {
 	[self.uut applyOptions:self.options];
 	
 	XCTAssertTrue(self.bindedViewController.navigationItem.largeTitleDisplayMode == UINavigationItemLargeTitleDisplayModeNever);
 }
+#endif
 
 - (void)testApplyOptions_layoutBackgroundColorDefaultWhiteColor {
 	[self.uut applyOptions:self.options];
 	XCTAssertNil(self.bindedViewController.view.backgroundColor);
 }
 
+#if !TARGET_OS_TV
 - (void)testApplyOptions_statusBarBlurDefaultFalse {
 	[self.uut applyOptions:self.options];
 	XCTAssertNil([self.bindedViewController.view viewWithTag:BLUR_STATUS_TAG]);
@@ -54,6 +57,7 @@
 	[self.uut applyOptions:self.options];
 	XCTAssertFalse(self.bindedViewController.navigationItem.hidesBackButton);
 }
+#endif
 
 - (void)testApplyOptions_drawBehindTabBarTrueWhenVisibleFalse {
 	self.options.bottomTabs.visible = [[Bool alloc] initWithValue:@(0)];

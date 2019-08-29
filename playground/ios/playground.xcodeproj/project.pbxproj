@@ -11,6 +11,23 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2DA3920B2318607000FD1B57 /* RNNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50451D34204451A800695F00 /* RNNCustomViewController.m */; };
+		2DA3920C2318607000FD1B57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		2DA3920D2318607000FD1B57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2DA392102318607000FD1B57 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E504607F227748EA00212BD8 /* JavaScriptCore.framework */; };
+		2DA3921C2318607000FD1B57 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FC91E840F1A00110AEC /* libReactNativeNavigation.a */; };
+		2DA3921F2318607000FD1B57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2DA392202318607000FD1B57 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		2DA3924C231860B900FD1B57 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FE01E840F3600110AEC /* libcxxreact.a */; };
+		2DA3924D2318617200FD1B57 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FED1E840F6700110AEC /* libRCTAnimation.a */; };
+		2DA3924E2318618800FD1B57 /* libRCTImage-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F30151E84125F00110AEC /* libRCTImage-tvOS.a */; };
+		2DA3924F2318619500FD1B57 /* libRCTLinking-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F301E1E84127400110AEC /* libRCTLinking-tvOS.a */; };
+		2DA392502318619E00FD1B57 /* libRCTNetwork-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F30271E84128500110AEC /* libRCTNetwork-tvOS.a */; };
+		2DA39251231861A600FD1B57 /* libRCTSettings-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F30301E84129500110AEC /* libRCTSettings-tvOS.a */; };
+		2DA39252231861AE00FD1B57 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F30391E8412A600110AEC /* libRCTText-tvOS.a */; };
+		2DA39253231861BB00FD1B57 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F30481E8412E100110AEC /* libRCTWebSocket-tvOS.a */; };
+		2DA39254231861D800FD1B57 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FD81E840F3600110AEC /* libReact.a */; };
+		2DA39255231861E500FD1B57 /* libyoga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FDC1E840F3600110AEC /* libyoga.a */; };
 		50451D35204451A900695F00 /* RNNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50451D34204451A800695F00 /* RNNCustomViewController.m */; };
 		7B8F30491E84151300110AEC /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FDE1E840F3600110AEC /* libcxxreact.a */; };
 		7B8F304B1E84151300110AEC /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8F2FFA1E8411A800110AEC /* libRCTActionSheet.a */; };
@@ -299,6 +316,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2DA392252318607000FD1B57 /* playground-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "playground-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DA392262318607000FD1B57 /* playground copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "playground copy-Info.plist"; path = "/Users/dlowder/iosProjects/react-native-navigation/playground/ios/playground copy-Info.plist"; sourceTree = "<absolute>"; };
 		50451D33204451A800695F00 /* RNNCustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNNCustomViewController.h; path = ../../../lib/ios/RNNCustomViewController.h; sourceTree = "<group>"; };
 		50451D34204451A800695F00 /* RNNCustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNNCustomViewController.m; path = ../../../lib/ios/RNNCustomViewController.m; sourceTree = "<group>"; };
 		7B8F2FC41E840F1A00110AEC /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = ../../lib/ios/ReactNativeNavigation.xcodeproj; sourceTree = "<group>"; };
@@ -336,6 +355,25 @@
 				7B8F30551E84151300110AEC /* libReact.a in Frameworks */,
 				7B8F30561E84151300110AEC /* libReactNativeNavigation.a in Frameworks */,
 				7B8F30571E84151300110AEC /* libyoga.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DA3920E2318607000FD1B57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DA39255231861E500FD1B57 /* libyoga.a in Frameworks */,
+				2DA39254231861D800FD1B57 /* libReact.a in Frameworks */,
+				2DA39253231861BB00FD1B57 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				2DA39252231861AE00FD1B57 /* libRCTText-tvOS.a in Frameworks */,
+				2DA39251231861A600FD1B57 /* libRCTSettings-tvOS.a in Frameworks */,
+				2DA392502318619E00FD1B57 /* libRCTNetwork-tvOS.a in Frameworks */,
+				2DA3924F2318619500FD1B57 /* libRCTLinking-tvOS.a in Frameworks */,
+				2DA3924E2318618800FD1B57 /* libRCTImage-tvOS.a in Frameworks */,
+				2DA3924D2318617200FD1B57 /* libRCTAnimation.a in Frameworks */,
+				2DA3924C231860B900FD1B57 /* libcxxreact.a in Frameworks */,
+				2DA392102318607000FD1B57 /* JavaScriptCore.framework in Frameworks */,
+				2DA3921C2318607000FD1B57 /* libReactNativeNavigation.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +534,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				E504607E227748E900212BD8 /* Frameworks */,
+				2DA392262318607000FD1B57 /* playground copy-Info.plist */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -506,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* playground.app */,
+				2DA392252318607000FD1B57 /* playground-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -547,6 +587,24 @@
 			productReference = 13B07F961A680F5B00A75B9A /* playground.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2DA392092318607000FD1B57 /* playground-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DA392222318607000FD1B57 /* Build configuration list for PBXNativeTarget "playground-tvOS" */;
+			buildPhases = (
+				2DA3920A2318607000FD1B57 /* Sources */,
+				2DA3920E2318607000FD1B57 /* Frameworks */,
+				2DA3921E2318607000FD1B57 /* Resources */,
+				2DA392212318607000FD1B57 /* Bundle React Native code and images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "playground-tvOS";
+			productName = "Hello World";
+			productReference = 2DA392252318607000FD1B57 /* playground-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -559,6 +617,9 @@
 					13B07F861A680F5B00A75B9A = {
 						ProvisioningStyle = Manual;
 					};
+					2DA392092318607000FD1B57 = {
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "playground" */;
@@ -566,6 +627,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -625,6 +687,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* playground */,
+				2DA392092318607000FD1B57 /* playground-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -901,10 +964,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DA3921E2318607000FD1B57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DA3921F2318607000FD1B57 /* Images.xcassets in Resources */,
+				2DA392202318607000FD1B57 /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../../node_modules/react-native/scripts/react-native-xcode.sh ./index.js\n";
+		};
+		2DA392212318607000FD1B57 /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -928,6 +1014,16 @@
 				50451D35204451A900695F00 /* RNNCustomViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DA3920A2318607000FD1B57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DA3920B2318607000FD1B57 /* RNNCustomViewController.m in Sources */,
+				2DA3920C2318607000FD1B57 /* AppDelegate.m in Sources */,
+				2DA3920D2318607000FD1B57 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,6 +1078,49 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.reactnativenavigation.playground;
 				PRODUCT_NAME = playground;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2DA392232318607000FD1B57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "playground copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactnativenavigation.playground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DA392242318607000FD1B57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "playground copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"c++\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.reactnativenavigation.playground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1091,6 +1230,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2DA392222318607000FD1B57 /* Build configuration list for PBXNativeTarget "playground-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DA392232318607000FD1B57 /* Debug */,
+				2DA392242318607000FD1B57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

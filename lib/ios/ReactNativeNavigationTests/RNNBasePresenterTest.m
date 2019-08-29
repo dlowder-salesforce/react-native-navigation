@@ -60,6 +60,8 @@
     [self.mockBoundViewController verify];
 }
 
+#if !TARGET_OS_TV
+
 - (void)testGetPreferredStatusBarStyle_returnLightIfLight {
     RNNNavigationOptions * lightOptions = [[RNNNavigationOptions alloc] initEmptyOptions];
     lightOptions.statusBar.style = [[Text alloc] initWithValue:@"light"];
@@ -89,5 +91,6 @@
     XCTAssertEqual([_uut getStatusBarStyle:options], UIStatusBarStyleLightContent);
 }
 
+#endif // TARGET_OS_TV
 
 @end

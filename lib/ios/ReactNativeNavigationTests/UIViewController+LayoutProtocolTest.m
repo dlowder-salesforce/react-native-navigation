@@ -42,6 +42,8 @@
 	XCTAssertEqual(uut.viewControllers[1], child2);
 }
 
+#if !TARGET_OS_TV
+
 - (void)testSetBackButtonIcon_withColor_shouldSetColor {
 	UIViewController* uut = [UIViewController new];
 	[[UINavigationController alloc] initWithRootViewController:uut];
@@ -79,6 +81,8 @@
 	[uut rnn_setBackButtonIcon:nil withColor:nil title:title];
 	XCTAssertEqual(title, uut.navigationItem.backBarButtonItem.title);
 }
+
+#endif // TARGET_OS_TV
 
 - (void)testResolveOptions {
 	RNNViewControllerPresenter* presenter = [[RNNViewControllerPresenter alloc] init];

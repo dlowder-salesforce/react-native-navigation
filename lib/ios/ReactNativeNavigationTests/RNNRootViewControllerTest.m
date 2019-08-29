@@ -70,6 +70,8 @@
 	XCTAssertNoThrow([self.uut viewWillAppear:false]);
 }
 
+#if !TARGET_OS_TV
+
 - (void)testStatusBarHidden_default {
 	[self.uut viewWillAppear:false];
 
@@ -107,6 +109,8 @@
 
 	XCTAssertTrue([self.uut prefersStatusBarHidden]);
 }
+
+#endif // TARGET_OS_TV
 
 -(void)testTitle_string{
 	NSString* title =@"some title";
@@ -147,6 +151,7 @@
 	XCTAssertTrue([self.uut.navigationController.navigationBar.titleTextAttributes[@"NSFont"] isEqual:expectedFont]);
 }
 
+#if !TARGET_OS_TV
 -(void)testTopBarHideOnScroll_true {
 	NSNumber* hideOnScrollInput = @(1);
 	__unused RNNNavigationController* nav = [self createNavigationController];
@@ -154,6 +159,7 @@
 	[self.uut viewWillAppear:false];
 	XCTAssertTrue(self.uut.navigationController.hidesBarsOnSwipe);
 }
+#endif
 
 -(void)testTopBarTranslucent {
 	NSNumber* topBarTranslucentInput = @(0);
@@ -195,6 +201,8 @@
 	UIView* transparentView = [self.uut.navigationController.navigationBar viewWithTag:TOP_BAR_TRANSPARENT_TAG];
 	XCTAssertFalse(transparentView);
 }
+
+#if !TARGET_OS_TV
 
 -(void)testTopBarLargeTitle_default {
 	[self.uut viewWillAppear:false];
@@ -267,6 +275,7 @@
 	XCTAssertTrue([self.uut.navigationController.navigationBar.largeTitleTextAttributes[@"NSFont"] isEqual:expectedFont]);
 }
 
+#endif // TARGET_OS_TV
 
 -(void)testTopBarTextFontSize_withoutTextFontFamily_withoutTextColor {
 	NSNumber* topBarTextFontSizeInput = @(15);
@@ -323,6 +332,8 @@
 	self.options.topBar.title.fontFamily = [[Text alloc] initWithValue:inputFont];
 	//	XCTAssertThrows([self.uut viewWillAppear:false]);
 }
+
+#if !TARGET_OS_TV
 
 -(void)testOrientation_portrait {
 	NSArray* supportedOrientations = @[@"portrait"];
@@ -411,6 +422,8 @@
 	UIInterfaceOrientationMask expectedOrientation = UIInterfaceOrientationMaskAll;
 	XCTAssertTrue(self.uut.tabBarController.supportedInterfaceOrientations == expectedOrientation);
 }
+
+#endif // TARGET_OS_TV
 
 -(void)testRightButtonsWithTitle_withoutStyle {
 	self.options.topBar.rightButtons = @[@{@"id": @"testId", @"text": @"test"}];
@@ -503,6 +516,8 @@
 	XCTAssertNil([self.uut.view viewWithTag:BLUR_STATUS_TAG]);
 }
 
+#if !TARGET_OS_TV
+
 - (void)testTabBarHidden_default {
 	[self.uut viewWillAppear:false];
 
@@ -515,6 +530,8 @@
 
 	XCTAssertFalse([self.uut hidesBottomBarWhenPushed]);
 }
+
+#endif
 
 -(void)testTopBarBlur_default {
 	__unused RNNNavigationController* nav = [self createNavigationController];

@@ -125,11 +125,13 @@
     XCTAssertEqual([self.uut getCurrentChild], [(RNNTabBarController *) self.uut selectedViewController]);
 }
 
+#if !TARGET_OS_TV
 - (void)testPreferredStatusBarStyle_shouldInvokeSelectedViewControllerPreferredStatusBarStyle {
     [[self.mockTabBarPresenter expect] getStatusBarStyle:[OCMArg any]];
     [self.uut preferredStatusBarStyle];
     [self.mockTabBarPresenter verify];
 }
+#endif
 
 - (void)testTabBarControllerDidSelectViewControllerDelegate_shouldInvokeSendBottomTabSelectedEvent {
     NSUInteger selectedIndex = 2;

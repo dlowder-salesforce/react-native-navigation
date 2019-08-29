@@ -43,6 +43,8 @@
 	[_bindedViewController verify];
 }
 
+#if !TARGET_OS_TV
+
 - (void)testApplyOptionsBeforePoppingShouldSetLargeTitleForPoppingViewController {
 	_options.topBar.largeTitle.visible = [[Bool alloc] initWithBOOL:YES];
 	
@@ -56,5 +58,7 @@
 	[self.uut applyOptionsBeforePopping:self.options];
 	XCTAssertFalse([[self.uut.boundViewController navigationBar] prefersLargeTitles]);
 }
+
+#endif
 
 @end

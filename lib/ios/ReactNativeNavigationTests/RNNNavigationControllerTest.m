@@ -39,9 +39,11 @@
 	XCTAssertTrue(self.uut.viewControllers.count == 2);
 }
 
+#if !TARGET_OS_TV
 - (void)testChildViewControllerForStatusBarStyle_shouldReturnTopViewController {
 	XCTAssertTrue(self.uut.childViewControllerForStatusBarStyle == self.uut.topViewController);
 }
+#endif
 
 - (void)testCurrentChild_shouldReturnTopViewController {
 	XCTAssertTrue(self.uut.getCurrentChild == self.uut.topViewController);
@@ -50,6 +52,8 @@
 - (void)testGetLeafViewController_shouldReturnTopViewController {
 	XCTAssertTrue(self.uut.getCurrentChild == self.uut.topViewController);
 }
+
+#if !TARGET_OS_TV
 
 - (void)testPreferredStatusBarStyle_shouldReturnLeafPreferredStatusBarStyle {
 	self.uut.getCurrentChild.resolveOptions.statusBar.style = [[Text alloc] initWithValue:@"light"];
@@ -77,6 +81,8 @@
 	
 	XCTAssertTrue(self.uut.interactivePopGestureRecognizer.enabled);
 }
+
+#endif // TARGET_OS_TV
 
 - (void)testRootBackgroundImage {
 	UIImage* rootBackgroundImage = [[UIImage alloc] init];
@@ -108,9 +114,11 @@
 	XCTAssertFalse(self.uut.navigationController.navigationBar.clipsToBounds);
 }
 
+#if !TARGET_OS_TV
 - (void)testSupportedOrientationsShouldReturnCurrentChildSupportedOrientations {
 	XCTAssertEqual(self.uut.supportedInterfaceOrientations, self.uut.getCurrentChild.supportedInterfaceOrientations);
 }
+#endif
 
 - (void)testPopViewControllerReturnLastChildViewController {
 	RNNNavigationController* uut = [RNNNavigationController new];
