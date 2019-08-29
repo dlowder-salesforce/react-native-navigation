@@ -18,6 +18,7 @@
 		}
 		@catch(NSException *e)
 		{
+#if !TARGET_OS_TV
 			UIView *splashView = [[NSBundle mainBundle] loadNibNamed:launchStoryBoard owner:self options:nil][0];
 			if (splashView != nil)
 			{
@@ -25,6 +26,7 @@
 				viewController = [[RNNSplashScreen alloc] init];
 				viewController.view = splashView;
 			}
+#endif
 		}
 	}
 	else {//load the splash from the DEfault image or from LaunchImage in the xcassets

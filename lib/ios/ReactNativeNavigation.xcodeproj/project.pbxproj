@@ -332,7 +332,6 @@
 		2DA3938C2318621C00FD1B57 /* RNNExternalComponentStoreTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B49FEC71E95098500DEB3EA /* RNNExternalComponentStoreTest.m */; };
 		2DA3938E2318621C00FD1B57 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 508EBDBA2278742700BEC144 /* JavaScriptCore.framework */; };
 		2DA3938F2318621C00FD1B57 /* libcxxreact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49FED11E950A7A00DEB3EA /* libcxxreact.a */; };
-		2DA393902318621C00FD1B57 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49FED31E950A7A00DEB3EA /* libRCTActionSheet.a */; };
 		2DA393912318621C00FD1B57 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49FED41E950A7A00DEB3EA /* libRCTAnimation.a */; };
 		2DA393922318621C00FD1B57 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49FED61E950A7A00DEB3EA /* libRCTImage.a */; };
 		2DA393932318621C00FD1B57 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B49FED71E950A7A00DEB3EA /* libRCTLinking.a */; };
@@ -706,7 +705,7 @@
 		26916C941E4B9CCC00D13680 /* RNNRootViewCreator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNRootViewCreator.h; sourceTree = "<group>"; };
 		26916C961E4B9E7700D13680 /* RNNReactRootViewCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNNReactRootViewCreator.h; sourceTree = "<group>"; };
 		26916C971E4B9E7700D13680 /* RNNReactRootViewCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNNReactRootViewCreator.m; sourceTree = "<group>"; };
-		2DA39369231861FE00FD1B57 /* libReactNativeNavigation-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libReactNativeNavigation-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DA39369231861FE00FD1B57 /* libReactNativeNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeNavigation.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA393A12318621C00FD1B57 /* ReactNativeNavigation-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReactNativeNavigation-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA393A22318621D00FD1B57 /* ReactNativeNavigationTests copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ReactNativeNavigationTests copy-Info.plist"; path = "/Users/dlowder/iosProjects/react-native-navigation/lib/ios/ReactNativeNavigationTests copy-Info.plist"; sourceTree = "<absolute>"; };
 		2DCD9193200014A900EDC75D /* RNNBridgeManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNNBridgeManager.h; sourceTree = "<group>"; };
@@ -1028,7 +1027,6 @@
 			files = (
 				2DA3938E2318621C00FD1B57 /* JavaScriptCore.framework in Frameworks */,
 				2DA3938F2318621C00FD1B57 /* libcxxreact.a in Frameworks */,
-				2DA393902318621C00FD1B57 /* libRCTActionSheet.a in Frameworks */,
 				2DA393912318621C00FD1B57 /* libRCTAnimation.a in Frameworks */,
 				2DA393922318621C00FD1B57 /* libRCTImage.a in Frameworks */,
 				2DA393932318621C00FD1B57 /* libRCTLinking.a in Frameworks */,
@@ -1504,7 +1502,7 @@
 			children = (
 				D8AFADBD1BEE6F3F00A4592D /* libReactNativeNavigation.a */,
 				7B49FEBB1E95090800DEB3EA /* ReactNativeNavigationTests.xctest */,
-				2DA39369231861FE00FD1B57 /* libReactNativeNavigation-tvOS.a */,
+				2DA39369231861FE00FD1B57 /* libReactNativeNavigation.a */,
 				2DA393A12318621C00FD1B57 /* ReactNativeNavigation-tvOSTests.xctest */,
 			);
 			name = Products;
@@ -1884,7 +1882,7 @@
 			);
 			name = "ReactNativeNavigation-tvOS";
 			productName = libReactContacts;
-			productReference = 2DA39369231861FE00FD1B57 /* libReactNativeNavigation-tvOS.a */;
+			productReference = 2DA39369231861FE00FD1B57 /* libReactNativeNavigation.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		2DA3936A2318621C00FD1B57 /* ReactNativeNavigation-tvOSTests */ = {
@@ -2381,8 +2379,8 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				PRODUCT_NAME = ReactNativeNavigation;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ReactNativeNavigation;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeNavigation-Bridging-Header.h";
@@ -2399,8 +2397,8 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "include/$(TARGET_NAME)";
+				PRODUCT_NAME = ReactNativeNavigation;
+				PUBLIC_HEADERS_FOLDER_PATH = include/ReactNativeNavigation;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ReactNativeNavigation-Bridging-Header.h";

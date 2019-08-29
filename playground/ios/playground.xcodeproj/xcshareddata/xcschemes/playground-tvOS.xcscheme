@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1030"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "NO"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D3C04B91DE3340900C268FA"
+               BlueprintIdentifier = "3D3C059B1DE3340C00C268FA"
                BuildableName = "libyoga.a"
-               BlueprintName = "yoga"
+               BlueprintName = "yoga-tvOS"
                ReferencedContainer = "container:../../node_modules/react-native/React/React.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
+               BlueprintIdentifier = "2D2A28121D9B038B00D4039D"
                BuildableName = "libReact.a"
-               BlueprintName = "React"
+               BlueprintName = "React-tvOS"
                ReferencedContainer = "container:../../node_modules/react-native/React/React.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,10 +42,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "playground.app"
-               BlueprintName = "playground"
+               BlueprintIdentifier = "2DA392092318607000FD1B57"
+               BuildableName = "playground-tvOS.app"
+               BlueprintName = "playground-tvOS"
                ReferencedContainer = "container:playground.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2DA3936A2318621C00FD1B57"
+               BuildableName = "ReactNativeNavigation-tvOSTests.xctest"
+               BlueprintName = "ReactNativeNavigation-tvOSTests"
+               ReferencedContainer = "container:../../lib/ios/ReactNativeNavigation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -54,36 +68,18 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B49FEBA1E95090800DEB3EA"
-               BuildableName = "ReactNativeNavigationTests.xctest"
-               BlueprintName = "ReactNativeNavigationTests"
-               ReferencedContainer = "container:../../lib/ios/ReactNativeNavigation.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "playground.app"
-            BlueprintName = "playground"
+            BlueprintIdentifier = "2DA392092318607000FD1B57"
+            BuildableName = "playground-tvOS.app"
+            BlueprintName = "playground-tvOS"
             ReferencedContainer = "container:playground.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "TEST_ENABLED"
-            value = "YES"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -101,9 +97,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "playground.app"
-            BlueprintName = "playground"
+            BlueprintIdentifier = "2DA392092318607000FD1B57"
+            BuildableName = "playground-tvOS.app"
+            BlueprintName = "playground-tvOS"
             ReferencedContainer = "container:playground.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -120,9 +116,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "playground.app"
-            BlueprintName = "playground"
+            BlueprintIdentifier = "2DA392092318607000FD1B57"
+            BuildableName = "playground-tvOS.app"
+            BlueprintName = "playground-tvOS"
             ReferencedContainer = "container:playground.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
