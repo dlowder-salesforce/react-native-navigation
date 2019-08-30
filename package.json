@@ -29,6 +29,7 @@
     "pretest-js": "npm run build",
     "test-js": "node ./scripts/test-js",
     "test-unit-ios": "node ./scripts/test-unit --ios",
+    "test-unit-tvos": "node ./scripts/test-unit --tvos",
     "test-unit-android": "node ./scripts/test-unit --android",
     "pretest-e2e-android": "npm run build",
     "test-e2e-android": "node ./scripts/test-e2e --android",

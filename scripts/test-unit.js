@@ -2,11 +2,14 @@ const _ = require('lodash');
 const exec = require('shell-utils').exec;
 
 const android = _.includes(process.argv, '--android');
+const tvos    = _.includes(process.argv, '--tvos');
 const release = _.includes(process.argv, '--release');
 
 function run() {
   if (android) {
     runAndroidUnitTests();
+  } else if (tvos) {
+    runTvosUnitTests();
   } else {
     runIosUnitTests();
   }
@@ -20,6 +23,33 @@ function runAndroidUnitTests() {
     // exec.execSync(`echo y | ${sdkmanager} --update && echo y | ${sdkmanager} --licenses`);
   }
   exec.execSync(`cd lib/android && ./gradlew ${conf}`);
+}
+
+function runTvosUnitTests() {
+  const conf = release ? `Release` : `Debug`;
+
+  exec.execSync(`cd ./playground/ios &&
+            RCT_NO_LAUNCH_PACKAGER=true
+            xcodebuild build build-for-testing
+            -scheme "ReactNativeNavigation-tvOS"
+            -project playground.xcodeproj
+            -sdk appletvsimulator
+            -configuration ${conf}
+            -derivedDataPath ./playground/ios/DerivedData/playground
+            -quiet
+            -UseModernBuildSystem=NO
+            ONLY_ACTIVE_ARCH=YES`);
+
+  exec.execSync(`cd ./playground/ios &&
+            RCT_NO_LAUNCH_PACKAGER=true
+            xcodebuild test-without-building
+            -scheme "ReactNativeNavigation-tvOS"
+            -project playground.xcodeproj
+            -sdk appletvsimulator
+            -configuration ${conf}
+            -destination 'platform=tvOS Simulator,name=Apple TV'
+            -derivedDataPath ./playground/ios/DerivedData/playground
+            ONLY_ACTIVE_ARCH=YES`);
 }
 
 function runIosUnitTests() {
