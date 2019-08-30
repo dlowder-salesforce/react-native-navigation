@@ -502,6 +502,8 @@
 	XCTAssertNil(self.uut.navigationController.navigationBar.shadowImage);
 }
 
+#if !TARGET_OS_TV
+
 -(void)testStatusBarBlurOn {
 	NSNumber* statusBarBlurInput = @(1);
 	self.options.statusBar.blur = [[Bool alloc] initWithValue:statusBarBlurInput];
@@ -515,8 +517,6 @@
 	[self.uut viewWillAppear:false];
 	XCTAssertNil([self.uut.view viewWithTag:BLUR_STATUS_TAG]);
 }
-
-#if !TARGET_OS_TV
 
 - (void)testTabBarHidden_default {
 	[self.uut viewWillAppear:false];

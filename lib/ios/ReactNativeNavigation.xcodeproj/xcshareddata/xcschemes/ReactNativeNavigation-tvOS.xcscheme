@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2DA39256231861FE00FD1B57"
-               BuildableName = "libReactNativeNavigation-tvOS.a"
+               BuildableName = "libReactNativeNavigation.a"
                BlueprintName = "ReactNativeNavigation-tvOS"
                ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2DA3936A2318621C00FD1B57"
+               BlueprintIdentifier = "2D76DDC42318B27A00253091"
                BuildableName = "ReactNativeNavigation-tvOSTests.xctest"
                BlueprintName = "ReactNativeNavigation-tvOSTests"
                ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
@@ -56,12 +56,22 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2D76DDC42318B27A00253091"
+               BuildableName = "ReactNativeNavigation-tvOSTests.xctest"
+               BlueprintName = "ReactNativeNavigation-tvOSTests"
+               ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2DA39256231861FE00FD1B57"
-            BuildableName = "libReactNativeNavigation-tvOS.a"
+            BuildableName = "libReactNativeNavigation.a"
             BlueprintName = "ReactNativeNavigation-tvOS"
             ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
          </BuildableReference>
@@ -83,7 +93,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2DA39256231861FE00FD1B57"
-            BuildableName = "libReactNativeNavigation-tvOS.a"
+            BuildableName = "libReactNativeNavigation.a"
             BlueprintName = "ReactNativeNavigation-tvOS"
             ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
          </BuildableReference>
@@ -101,7 +111,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2DA39256231861FE00FD1B57"
-            BuildableName = "libReactNativeNavigation-tvOS.a"
+            BuildableName = "libReactNativeNavigation.a"
             BlueprintName = "ReactNativeNavigation-tvOS"
             ReferencedContainer = "container:ReactNativeNavigation.xcodeproj">
          </BuildableReference>

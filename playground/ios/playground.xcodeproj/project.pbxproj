@@ -11,7 +11,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2D433C002318845F004C3A56 /* libReactNativeNavigation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D433BFC231882D1004C3A56 /* libReactNativeNavigation-tvOS.a */; };
+		2D433C002318845F004C3A56 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D433BFC231882D1004C3A56 /* libReactNativeNavigation.a */; };
 		2DA3920B2318607000FD1B57 /* RNNCustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50451D34204451A800695F00 /* RNNCustomViewController.m */; };
 		2DA3920C2318607000FD1B57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2DA3920D2318607000FD1B57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -375,7 +375,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D433C002318845F004C3A56 /* libReactNativeNavigation-tvOS.a in Frameworks */,
+				2D433C002318845F004C3A56 /* libReactNativeNavigation.a in Frameworks */,
 				2DA39255231861E500FD1B57 /* libyoga.a in Frameworks */,
 				2DA39254231861D800FD1B57 /* libReact.a in Frameworks */,
 				2DA39253231861BB00FD1B57 /* libRCTWebSocket-tvOS.a in Frameworks */,
@@ -413,7 +413,7 @@
 			children = (
 				7B8F2FC91E840F1A00110AEC /* libReactNativeNavigation.a */,
 				7B49FF091E950AF400DEB3EA /* ReactNativeNavigationTests.xctest */,
-				2D433BFC231882D1004C3A56 /* libReactNativeNavigation-tvOS.a */,
+				2D433BFC231882D1004C3A56 /* libReactNativeNavigation.a */,
 				2D433BFE231882D1004C3A56 /* ReactNativeNavigation-tvOSTests.xctest */,
 			);
 			name = Products;
@@ -708,10 +708,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2D433BFC231882D1004C3A56 /* libReactNativeNavigation-tvOS.a */ = {
+		2D433BFC231882D1004C3A56 /* libReactNativeNavigation.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = "libReactNativeNavigation-tvOS.a";
+			path = libReactNativeNavigation.a;
 			remoteRef = 2D433BFB231882D1004C3A56 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -1119,6 +1119,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/playground/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1140,6 +1141,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/playground/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
