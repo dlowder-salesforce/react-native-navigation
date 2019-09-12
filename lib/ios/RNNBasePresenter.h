@@ -26,7 +26,7 @@ typedef void (^RNNReactViewReadyCompletionBlock)(void);
 
 - (void)applyDotIndicator:(UIViewController *)child;
 
-- (void)mergeOptions:(RNNNavigationOptions *)newOptions currentOptions:(RNNNavigationOptions *)currentOptions;
+- (void)mergeOptions:(RNNNavigationOptions *)options resolvedOptions:(RNNNavigationOptions *)resolvedOptions;
 
 - (void)renderComponents:(RNNNavigationOptions *)options perform:(RNNReactViewReadyCompletionBlock)readyBlock;
 
@@ -35,6 +35,8 @@ typedef void (^RNNReactViewReadyCompletionBlock)(void);
 #if !TARGET_OS_TV
 - (UIStatusBarStyle)getStatusBarStyle:(RNNNavigationOptions *)resolvedOptions;
 #endif
+
+- (UIInterfaceOrientationMask)getOrientation:(RNNNavigationOptions *)options;
 
 - (BOOL)isStatusBarVisibility:(UINavigationController *)stack resolvedOptions:(RNNNavigationOptions *)resolvedOptions;
 @end
