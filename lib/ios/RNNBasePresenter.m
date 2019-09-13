@@ -174,11 +174,11 @@
         return UIStatusBarStyleDefault;
     }
 }
-#endif
 
 - (UIInterfaceOrientationMask)getOrientation:(RNNNavigationOptions *)options {
     return [options withDefault:[self defaultOptions]].layout.supportedOrientations;
 }
+#endif
 
 - (BOOL)isStatusBarVisibility:(UINavigationController *)stack resolvedOptions:(RNNNavigationOptions *)resolvedOptions {
     RNNNavigationOptions *withDefault = [resolvedOptions withDefault:[self defaultOptions]];

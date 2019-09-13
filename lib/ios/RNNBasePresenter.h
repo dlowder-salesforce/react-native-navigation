@@ -34,9 +34,9 @@ typedef void (^RNNReactViewReadyCompletionBlock)(void);
 
 #if !TARGET_OS_TV
 - (UIStatusBarStyle)getStatusBarStyle:(RNNNavigationOptions *)resolvedOptions;
-#endif
 
 - (UIInterfaceOrientationMask)getOrientation:(RNNNavigationOptions *)options;
+#endif
 
 - (BOOL)isStatusBarVisibility:(UINavigationController *)stack resolvedOptions:(RNNNavigationOptions *)resolvedOptions;
 @end

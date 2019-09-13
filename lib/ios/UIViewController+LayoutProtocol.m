@@ -47,9 +47,11 @@
 	[self.options overrideOptions:options];
 }
 
+#if !TARGET_OS_TV
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return [self.presenter getOrientation:[self resolveOptions]];
 }
+#endif
 
 - (void)renderTreeAndWait:(BOOL)wait perform:(RNNReactViewReadyCompletionBlock)readyBlock {
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

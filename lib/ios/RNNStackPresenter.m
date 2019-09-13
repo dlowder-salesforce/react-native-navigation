@@ -24,19 +24,24 @@
 	RNNStackController* stack = self.boundViewController;
 	RNNNavigationOptions * withDefault = [options withDefault:[self defaultOptions]];
 	
-	self.interactivePopGestureDelegate = [InteractivePopGestureDelegate new];
+#if !TARGET_OS_TV
+    self.interactivePopGestureDelegate = [InteractivePopGestureDelegate new];
 	self.interactivePopGestureDelegate.navigationController = stack;
 	self.interactivePopGestureDelegate.originalDelegate = stack.interactivePopGestureRecognizer.delegate;
 	stack.interactivePopGestureRecognizer.delegate = self.interactivePopGestureDelegate;
 
 	[stack setInteractivePopGestureEnabled:[withDefault.popGesture getWithDefaultValue:YES]];
-	[stack setRootBackgroundImage:[withDefault.rootBackgroundImage getWithDefaultValue:nil]];
+#endif
+
+    [stack setRootBackgroundImage:[withDefault.rootBackgroundImage getWithDefaultValue:nil]];
 	[stack setNavigationBarTestId:[withDefault.topBar.testID getWithDefaultValue:nil]];
 	[stack setNavigationBarVisible:[withDefault.topBar.visible getWithDefaultValue:YES] animated:[withDefault.topBar.animate getWithDefaultValue:YES]];
 	[stack hideBarsOnScroll:[withDefault.topBar.hideOnScroll getWithDefaultValue:NO]];
 	[stack setNavigationBarNoBorder:[withDefault.topBar.noBorder getWithDefaultValue:NO]];
+#if !TARGET_OS_TV
 	[stack setBarStyle:[RCTConvert UIBarStyle:[withDefault.topBar.barStyle getWithDefaultValue:@"default"]]];
-	[stack setNavigationBarTranslucent:[withDefault.topBar.background.translucent getWithDefaultValue:NO]];
+#endif
+    [stack setNavigationBarTranslucent:[withDefault.topBar.background.translucent getWithDefaultValue:NO]];
 	[stack setNavigationBarClipsToBounds:[withDefault.topBar.background.clipToBounds getWithDefaultValue:NO]];
 	[stack setNavigationBarBlur:[withDefault.topBar.background.blur getWithDefaultValue:NO]];
 	[stack setTopBarBackgroundColor:[withDefault.topBar.background.color getWithDefaultValue:nil]];
@@ -88,11 +93,13 @@
 	if (options.topBar.noBorder.hasValue) {
 		[stack setNavigationBarNoBorder:[options.topBar.noBorder get]];
 	}
-	
+
+#if !TARGET_OS_TV
 	if (options.topBar.barStyle.hasValue) {
 		[stack setBarStyle:[RCTConvert UIBarStyle:options.topBar.barStyle.get]];
 	}
-	
+#endif
+
 	if (options.topBar.background.translucent.hasValue) {
 		[stack setNavigationBarTranslucent:[options.topBar.background.translucent get]];
 	}

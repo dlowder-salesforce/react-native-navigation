@@ -202,14 +202,17 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 		backItem.image = color ?
 				[[backButton.icon.get withTintColor:color] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] :
 				backButton.icon.get;
-
+#if !TARGET_OS_TV
 		[self.navigationController.navigationBar setBackIndicatorImage:[UIImage new]];
         [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:[UIImage new]];
-	}
+#endif
+    }
 
 	if ([backButton.showTitle getWithDefaultValue:YES]) backItem.title = [backButton.title getWithDefaultValue:nil];
 	if (backButton.color.hasValue) backItem.tintColor = [backButton.color get];
+#if !TARGET_OS_TV
 	self.navigationItem.backBarButtonItem = backItem;
+#endif
 }
 
 @end
