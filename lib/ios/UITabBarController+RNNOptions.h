@@ -8,7 +8,11 @@
 
 - (void)setTabBarTestID:(NSString *)testID;
 
+#if TARGET_OS_TV
+- (void)setTabBarStyle:(NSInteger)barStyle;
+#else
 - (void)setTabBarStyle:(UIBarStyle)barStyle;
+#endif
 
 - (void)setTabBarTranslucent:(BOOL)translucent;
 

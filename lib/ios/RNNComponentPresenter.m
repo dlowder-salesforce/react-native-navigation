@@ -58,10 +58,15 @@
 	[viewController setStatusBarStyle:[withDefault.statusBar.style getWithDefaultValue:@"default"] animated:[withDefault.statusBar.animate getWithDefaultValue:YES]];
 	[viewController setBackButtonVisible:[withDefault.topBar.backButton.visible getWithDefaultValue:YES]];
 	[viewController setInterceptTouchOutside:[withDefault.overlay.interceptTouchOutside getWithDefaultValue:YES]];
-    
+
+#if TARGET_OS_TV
+    {
+#else
     if (@available(iOS 13.0, *)) {
+
         [viewController setBackgroundColor:[withDefault.layout.componentBackgroundColor getWithDefaultValue:UIColor.systemBackgroundColor]];
     } else {
+#endif
         [viewController setBackgroundColor:[withDefault.layout.componentBackgroundColor getWithDefaultValue:viewController.view.backgroundColor]];
     }
     

@@ -22,7 +22,9 @@
     [bottomTabs.view setBackgroundColor:[withDefault.layout.backgroundColor getWithDefaultValue:nil]];
     [self applyBackgroundColor:[withDefault.bottomTabs.backgroundColor getWithDefaultValue:nil] translucent:[withDefault.bottomTabs.translucent getWithDefaultValue:NO]];
     [bottomTabs setTabBarHideShadow:[withDefault.bottomTabs.hideShadow getWithDefaultValue:NO]];
+#if !TARGET_OS_TV
     [bottomTabs setTabBarStyle:[RCTConvert UIBarStyle:[withDefault.bottomTabs.barStyle getWithDefaultValue:@"default"]]];
+#endif
 }
 
 - (void)mergeOptions:(RNNNavigationOptions *)options resolvedOptions:(RNNNavigationOptions *)currentOptions {
@@ -48,7 +50,9 @@
     }
 
     if (options.bottomTabs.barStyle.hasValue) {
+#if !TARGET_OS_TV
         [bottomTabs setTabBarStyle:[RCTConvert UIBarStyle:options.bottomTabs.barStyle.get]];
+#endif
     }
 
     if (options.bottomTabs.translucent.hasValue) {

@@ -25,6 +25,7 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 
 - (void)setSearchBarWithPlaceholder:(NSString *)placeholder
 		 hideNavBarOnFocusSearchBar:(BOOL)hideNavBarOnFocusSearchBar {
+#if !TARGET_OS_TV
 	if (@available(iOS 11.0, *)) {
 		if (!self.navigationItem.searchController) {
 			UISearchController *search = [[UISearchController alloc]initWithSearchResultsController:nil];
@@ -44,12 +45,15 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 			self.definesPresentationContext = YES;
 		}
 	}
+#endif
 }
 
 - (void)setSearchBarHiddenWhenScrolling:(BOOL)searchBarHidden {
+#if !TARGET_OS_TV
 	if (@available(iOS 11.0, *)) {
 		self.navigationItem.hidesSearchBarWhenScrolling = searchBarHidden;
 	}
+#endif
 }
 
 - (void)setNavigationItemTitle:(NSString *)title {
@@ -111,6 +115,7 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 }
 
 - (void)setTopBarPrefersLargeTitle:(BOOL)prefersLargeTitle {
+#if !TARGET_OS_TV
 	if (@available(iOS 11.0, *)) {
 		if (prefersLargeTitle) {
 			self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAlways;
@@ -118,10 +123,12 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 			self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeNever;
 		}
 	}
+#endif
 }
 
 
 - (void)setStatusBarBlur:(BOOL)blur {
+#if !TARGET_OS_TV
 	UIView* curBlurView = [self.view viewWithTag:BLUR_STATUS_TAG];
 	if (blur) {
 		if (!curBlurView) {
@@ -135,6 +142,7 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 			[curBlurView removeFromSuperview];
 		}
 	}
+#endif
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
@@ -142,7 +150,9 @@ const NSInteger BLUR_STATUS_TAG = 78264801;
 }
 
 - (void)setBackButtonVisible:(BOOL)visible {
+#if !TARGET_OS_TV
 	self.navigationItem.hidesBackButton = !visible;
+#endif
 }
 
 - (CGFloat)statusBarAnimationDuration:(BOOL)animated {

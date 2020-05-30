@@ -26,14 +26,19 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 }
 
 - (void)hideBarsOnScroll:(BOOL)hideOnScroll {
+#if !TARGET_OS_TV
 	self.hidesBarsOnSwipe = hideOnScroll;
+#endif
 }
 
-- (void)setBarStyle:(UIBarStyle)barStyle {
-	self.navigationBar.barStyle = barStyle;
+- (void)setBarStyle:(NSInteger)barStyle {
+#if !TARGET_OS_TV
+    self.navigationBar.barStyle = (UIBarStyle)barStyle;
+#endif
 }
 
 - (void)setNavigationBarBlur:(BOOL)blur {
+#if !TARGET_OS_TV
 	if (blur && ![self.navigationBar viewWithTag:BLUR_TOPBAR_TAG]) {
 		[self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
 		self.navigationBar.shadowImage = [UIImage new];
@@ -52,6 +57,7 @@ const NSInteger BLUR_TOPBAR_TAG = 78264802;
 			[blur removeFromSuperview];
 		}
 	}
+#endif
 }
 
 - (void)setNavigationBarClipsToBounds:(BOOL)clipsToBounds {

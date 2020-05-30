@@ -15,6 +15,11 @@
 	return self;
 }
 
+#if TARGET_OS_TV
+- (int)supportedOrientations {
+    return 0;
+}
+#else
 - (UIInterfaceOrientationMask)supportedOrientations {
 	NSArray* orientationsArray = [self.orientation isKindOfClass:[NSString class]] ? @[self.orientation] : self.orientation;
 	NSUInteger supportedOrientationsMask = 0;
@@ -40,6 +45,6 @@
 
 	return supportedOrientationsMask;
 }
-
+#endif
 
 @end

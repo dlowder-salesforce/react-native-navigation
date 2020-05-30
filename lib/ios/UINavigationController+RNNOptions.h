@@ -10,7 +10,11 @@
 
 - (void)hideBarsOnScroll:(BOOL)hideOnScroll;
 
+#if TARGET_OS_TV
+- (void)setBarStyle:(NSInteger)barStyle;
+#else
 - (void)setBarStyle:(UIBarStyle)barStyle;
+#endif
 
 - (void)setNavigationBarBlur:(BOOL)blur;
 

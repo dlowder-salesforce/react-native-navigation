@@ -16,8 +16,10 @@
 	self.tabBar.accessibilityIdentifier = testID;
 }
 
-- (void)setTabBarStyle:(UIBarStyle)barStyle {
-	self.tabBar.barStyle = barStyle;
+- (void)setTabBarStyle:(NSInteger)barStyle {
+#if !TARGET_OS_TV
+	self.tabBar.barStyle = (UIBarStyle)barStyle;
+#endif
 }
 
 - (void)setTabBarTranslucent:(BOOL)translucent {

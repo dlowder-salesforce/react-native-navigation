@@ -62,8 +62,10 @@
 }
 
 - (void)setBackIndicatorImage:(UIImage *)image withColor:(UIColor *)color {
+#if !TARGET_OS_TV
     [self.navigationController.navigationBar setBackIndicatorImage:image];
     [self.navigationController.navigationBar setBackIndicatorTransitionMaskImage:image];
+#endif
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
@@ -102,6 +104,7 @@
 }
 
 - (void)setLargeTitleAttributes:(RNNLargeTitleOptions *)largeTitleOptions {
+#if !TARGET_OS_TV
     NSString* fontFamily = [largeTitleOptions.fontFamily getWithDefaultValue:nil];
     NSString* fontWeight = [largeTitleOptions.fontWeight getWithDefaultValue:nil];
     NSNumber* fontSize = [largeTitleOptions.fontSize getWithDefaultValue:nil];
@@ -110,9 +113,11 @@
     if (@available(iOS 11.0, *)) {
         self.navigationController.navigationBar.largeTitleTextAttributes = [RNNFontAttributesCreator createFromDictionary:self.navigationController.navigationBar.largeTitleTextAttributes fontFamily:fontFamily fontSize:fontSize defaultFontSize:nil fontWeight:fontWeight color:fontColor defaultColor:nil];
     }
+#endif
 }
 
 - (void)setBackButtonOptions:(RNNBackButtonOptions *)backButtonOptions {
+#if !TARGET_OS_TV
     UIImage* icon = [backButtonOptions.icon getWithDefaultValue:nil];
     UIColor* color = [backButtonOptions.color getWithDefaultValue:nil];
     NSString* title = [backButtonOptions.title getWithDefaultValue:nil];
@@ -146,6 +151,7 @@
     }
     
     lastViewControllerInStack.navigationItem.backBarButtonItem = backItem;
+#endif
 }
 
 - (BOOL)transparent {

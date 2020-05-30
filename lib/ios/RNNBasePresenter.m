@@ -85,6 +85,11 @@
 
 }
 
+#if TARGET_OS_TV
+- (int)getStatusBarStyle {
+    return 0;
+}
+#else
 - (UIStatusBarStyle)getStatusBarStyle {
     RNNNavigationOptions *withDefault = [self.boundViewController.resolveOptions withDefault:[self defaultOptions]];
     NSString* statusBarStyle = [withDefault.statusBar.style getWithDefaultValue:@"default"];
@@ -100,14 +105,21 @@
         return UIStatusBarStyleDefault;
     }
 }
+#endif
 
 - (UINavigationItem *)currentNavigationItem {
     return self.boundViewController.getCurrentChild.navigationItem;
 }
 
+#if TARGET_OS_TV
+- (int)getOrientation {
+    return 0;
+}
+#else
 - (UIInterfaceOrientationMask)getOrientation {
     return [self.boundViewController.resolveOptions withDefault:self.defaultOptions].layout.supportedOrientations;
 }
+#endif
 
 - (BOOL)getStatusBarVisibility {
     RNNNavigationOptions *withDefault = [self.boundViewController.resolveOptions withDefault:self.defaultOptions];
